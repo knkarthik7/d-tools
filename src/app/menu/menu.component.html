@@ -1,0 +1,34 @@
+<!-- <div class="left-section menu-item">
+
+    <button mat-menu-item >My Profile</button>
+    <button mat-menu-item >Add Car</button>
+    <button mat-menu-item >Car List</button>
+    <button mat-menu-item>Alerts</button>
+    <button mat-menu-item>Settings</button>
+    <button mat-menu-item >Logout</button>
+
+</div> -->
+
+<mat-toolbar color="primary">
+	<mat-nav-list class="list-horizontal">
+        <mat-list-item>
+            <img class="logo" src="assets/images/logo.png">
+          </mat-list-item>
+      
+     <mat-list-item>
+      <button mat-raised-button color="primary" mat-menu-item (click)="home()">Home</button>
+    </mat-list-item>
+     <mat-list-item>
+      <button mat-raised-button color="primary" mat-menu-item (click)="register()">Registration</button>
+    </mat-list-item>
+    <mat-list-item>
+        <button mat-raised-button color="primary" mat-menu-item (click)="details()">Details</button>
+      </mat-list-item>
+      <mat-list-item>
+        <button class="logout" mat-raised-button color="primary" mat-menu-item (click)="logout()">Logout</button>
+      </mat-list-item>
+      <mat-list-item class="currentUser">
+       Welcome {{currentUser}}
+      </mat-list-item>
+    </mat-nav-list>
+</mat-toolbar>
