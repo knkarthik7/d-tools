@@ -1,0 +1,26 @@
+.login {
+    float: none;
+    margin: 0 auto;
+    max-width: 30%;
+    position: relative;
+    top: 25%;
+}
+mat-form-field{
+    width: 100%;
+}
+.mat-toolbar-row, .mat-toolbar-single-row{
+    justify-content: center !important;
+}
+.email {
+    padding-top: 14px;
+}
+.signupBtn{
+    float: left;
+    margin-top: 10px;
+}
+mat-card{
+    height: 260px;
+}
+.loginLink{
+    float: right;
+}

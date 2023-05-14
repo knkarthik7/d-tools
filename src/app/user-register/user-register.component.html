@@ -1,0 +1,83 @@
+<app-menu></app-menu>
+<div class="register">
+<mat-toolbar color="primary">
+    Registration
+  </mat-toolbar>
+      <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+        <div class="fname">
+            <mat-form-field>
+                <mat-label>First Name</mat-label>
+                <input formControlName="firstName" type="text" matInput placeholder="Enter First Name">
+                <mat-error *ngIf="registrationForm.controls['firstName'].hasError('required')">
+                    First Name is required
+                </mat-error>
+                <mat-error *ngIf="registrationForm.controls['firstName'].hasError('pattern') ">
+                    Please Enter Valid First Name
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <div class="lname">
+            <mat-form-field>
+                <mat-label>Last Name</mat-label>
+                <input formControlName="lastName" type="text" matInput placeholder="Enter Last Name">
+                <mat-error
+                    *ngIf="registrationForm.controls['lastName'].hasError('pattern') && !registrationForm.controls['lastName'].hasError('required')">
+                    Please Enter Valid Last Name
+                </mat-error>
+                <mat-error *ngIf="registrationForm.controls['lastName'].hasError('required')">
+                    Last Name is required
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <div class="email">
+            <mat-form-field>
+                <mat-label>Email</mat-label>
+                <input formControlName="email" type="email" matInput placeholder="Enter email address">
+                <mat-error
+                    *ngIf="registrationForm.controls['email'].hasError('pattern') && !registrationForm.controls['email'].hasError('required')">
+                    Please enter a valid email address
+                </mat-error>
+                <mat-error *ngIf="registrationForm.controls['email'].hasError('required')">
+                    Email is required
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <div class="gender">
+              <mat-form-field>
+                <mat-label>Gender</mat-label>
+                <mat-select matNativeControl formControlName="gender" matInput name="gender">
+                     <mat-option *ngFor="let gender of genders" [value]="gender">
+                        {{gender}}
+                    </mat-option>
+                </mat-select>
+                <mat-error *ngIf="registrationForm.controls['gender'].hasError('required')">
+                    Select Gender
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <div class="contact">
+            <mat-form-field>
+                <mat-label>Contact Number</mat-label>
+                <input type="number" formControlName="mobileNumber" matInput placeholder="Enter Contact Number">
+                <mat-error
+                    *ngIf="registrationForm.controls['mobileNumber'].hasError('pattern') && !registrationForm.controls['mobileNumber'].hasError('required')">
+                    length has to be 10
+                </mat-error>
+                <mat-error *ngIf="registrationForm.controls['mobileNumber'].hasError('required')">
+                    Mobile Number is required
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <div class="city">
+            <mat-form-field>
+                <mat-label>City</mat-label>
+                <input type="text" formControlName="city" matInput placeholder="Enter city">
+                <mat-error *ngIf="registrationForm.controls['city'].hasError('required')">
+                    City is required
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <button mat-raised-button color="primary" class="loginBtn" [disabled]="registrationForm.invalid">Save</button>
+
+        </form>
+    </div>
