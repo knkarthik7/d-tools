@@ -1,0 +1,10 @@
+.mat-form-field {
+    width: 100%;
+  }
+  .container{
+    overflow: hidden !important;
+    margin-top: 20px;
+  }
+  .mat-dialog-actions{
+    margin-bottom: 0px !important;
+  }
